@@ -1,0 +1,32 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+:root{
+    --clr-primary-250: #242424;
+    --clr-primary-125: #141414;
+    --clr-primary-EEE: #EEEEEE;
+    
+}
+
+@font-face {
+    font-family: 'sk-modernistregular';
+    src: url('assets/webfontkit-20221231-054256/sk-modernist-regular-webfont.woff2') format('woff2'),
+         url('assets/webfontkit-20221231-054256/sk-modernist-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    color: var(--clr-primary-EEE);
+    font-family: 'sk-modernistregular';
+    padding: 0;
+    margin: 0;
+    background-color: var(--clr-primary-125);
+    min-height: 100vh;
+}
+

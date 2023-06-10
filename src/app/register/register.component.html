@@ -1,0 +1,117 @@
+<div class="gradient-form">
+  <div class="container-fluid py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card text-white" style="background-color: #242424">
+          <div class="row g-0">
+            <div class="col-lg-6 d-flex align-items-center bg-custom"></div>
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <form [formGroup]="formGroup" (ngSubmit)="register()">
+                  <div class="form-outline mb-4">
+                    <div class="row">
+                      <div class="col">
+                        <label class="form-label" for="form2Example11">Name</label>
+                        <input type="text" class="form-control" name="userName" formControlName="userName" pattern="[a-zA-Z ]*"
+                         />
+                      </div>
+
+                      <div class="col">
+                        <label class="form-label" for="form2Example11">Surname</label>
+                        <input type="text" class="form-control" name="surname" formControlName="surname"
+                          pattern="[a-zA-Z ]*" />
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div
+                    *ngIf="formGroup.controls['userName'].invalid && (formGroup.controls['userName'].dirty || formGroup.controls['userName'].touched)"
+                    class="alert alert-danger alert-cstm">
+                    <div *ngIf="$any(formGroup.controls['userName']).errors.required">
+                      Name cannot be empty!
+                    </div>
+                    <div *ngIf="$any(formGroup.controls['userName']).errors.pattern">
+                      Name can only contain letters!
+                    </div>
+                  </div>
+
+                  <div
+                  *ngIf="formGroup.controls['surname'].invalid && (formGroup.controls['surname'].dirty || formGroup.controls['surname'].touched)"
+                  class="alert alert-danger alert-cstm">
+                  <div *ngIf="$any(formGroup.controls['surname']).errors.required">
+                    Surname cannot be empty!
+                  </div>
+                  <div *ngIf="$any(formGroup.controls['surname']).errors.pattern">
+                    Surname can only contain letters!
+                  </div>
+                </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example11">E-mail</label>
+                    <input type="text" id="form2Example11" class="form-control" name="email" formControlName="email"
+                      required />
+                  </div>
+                  <div
+                    *ngIf="formGroup.controls['email'].invalid && (formGroup.controls['email'].dirty || formGroup.controls['email'].touched)"
+                    class="alert alert-danger alert-cstm">
+                    <div *ngIf="$any(formGroup.controls['email']).errors.email">
+                      E-mail must contain @ and .
+                    </div>
+                    <div *ngIf="$any(formGroup.controls['email']).errors.required">
+                      E-mail cannot be empty
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example11">Username</label>
+                    <input type="text" id="form2Example11" class="form-control" name="username"
+                      formControlName="username" minlength="6" required />
+                  </div>
+
+                  <div
+                  *ngIf="formGroup.controls['username'].invalid && (formGroup.controls['username'].dirty || formGroup.controls['username'].touched)"
+                  class="alert alert-danger alert-cstm">
+                  <div *ngIf="$any(formGroup.controls['username']).errors.minlength">
+                    Username needs to contain at least 6 characters
+                   </div>
+                  <div *ngIf="$any(formGroup.controls['username']).errors.required">
+                   Username cannot be empty
+                  </div>
+                </div>
+
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example22">Password</label>
+                    <input type="password" id="form2Example22"
+                      formControlName="password" name="password" class="form-control" />
+                  </div>
+                  <div
+                  *ngIf="formGroup.controls['password'].invalid && (formGroup.controls['password'].dirty || formGroup.controls['password'].touched  || formGroup.hasError('passwordInvalid') )"
+                  class="alert alert-danger alert-cstm">
+                  <div *ngIf="$any(formGroup.controls['password']).errors.passwordInvalid">
+                    Password need to contain six characters, at least one letter, one number and one special character
+                  </div>
+                  <div *ngIf="$any(formGroup.controls['password']).errors.required">
+                    Password cannot be empty
+                  </div>
+                </div>
+
+                  <div class="text-center pt-1 mb-1 pb-1">
+                    <button type="submit" class="btn text-white mb-3" [disabled]="!formGroup.valid" style="background-color: #7c3989">
+                      Register
+                    </button>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-center pb-1">
+                    <p class="mb-0 me-2">Already have an account?</p>
+                    <a [routerLink]="['/login']"> Click here to login</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

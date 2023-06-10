@@ -1,0 +1,55 @@
+<div class="w-100" style="margin-left: 0px !important; margin-right: 0px !important">
+  <div class="row w-100 gx-0 justify-content-between">
+
+    <div class="col-2">
+      <div class="sidebar">
+        <aside class="sidebar__sidebar">
+          <ul>
+            <li>
+              <h3 class="pt-2"><strong>Genres</strong></h3>
+            </li>
+            <li class="py-1" *ngFor="let genre of genres">
+              <p (click)="fetchGamesByGenre(genre.id)">{{ genre.genreName }}</p>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+
+    <div class="col-10">
+      <div class="row d-flex align-items-stretch text-center justify-content-between m-4">
+        <div class="d-flex">
+          <label class="h3" for="sort-by">Order by: </label>
+
+          <select class="btn btn-dark bg--bs-purple" id="sort-by" [(ngModel)]="selectedValue"
+            (change)="onSelectionChange()">
+            <option value="value1">Name ↑</option>
+            <option value="value2">Name ↓</option>
+            <option value="value4">Rating ↑</option>
+            <option value="value3">Rating ↓</option>
+          </select>
+
+        </div>
+        <div class="card card-cstm p-0 shadow text-center round-cstm justify-content-between h-100 my-3"
+          *ngFor="let game of games " style="width: 16rem">
+          <div *ngIf="games.length != 0">
+            <img class="card-img-top round-img-top" src="{{ game.backgroundImage }}" alt="Game image" />
+            <div class="card-body">
+
+              <h3 class="card-title">
+                <strong>{{ game.gameName }}</strong>
+              </h3>
+              <div class="card-text">
+                <hr />
+                <button *ngIf="isAdmin" class="btn btn-dark" style="background-color: #7c3989;"><fa-icon  [icon]="editIcon" [routerLink]="['/update', game.id]"></fa-icon></button>
+                <button class="btn btn-dark mx-2" [routerLink]="['/games', game.id]"
+                  style="background-color: #7c3989;">Details</button>
+                <button *ngIf="isAdmin" class="btn btn-dark" style="background-color: #7c3989;" (click)="deleteGame(game.id)">X</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.img-cstm{
+    width: 75%;
+}
+
+.split-screen {
+    display: flex;
+    background: rgba( 255, 255, 255, 0.1 ); 
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 17.5px );
+}
+
+.split-screen-half {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centering {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-section{
+    background-image: url("../../assets/vivid-blurred-colorful-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.end-section{
+    background-image: url("../../assets/vivid-blurred-colorful-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+

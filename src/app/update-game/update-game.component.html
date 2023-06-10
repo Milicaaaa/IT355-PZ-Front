@@ -1,0 +1,63 @@
+
+<section class="h-100 gradient-form">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card text-white" style="background-color: #242424">
+                    <div class="row g-0">
+                        <div class="col-lg-12">
+                            <div class="card-body p-md-5 mx-md-4">
+                                <div class="text-center">
+                                    <h1 class="mt-1 mb-5 pb-1">Update</h1>
+                                </div>
+                                <form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example11">Name</label>
+                                        <input type="text" id="form2Example11" class="form-control" name="gameName"
+                                            formControlName="gameName" value="{{this.game.gameName}}" required />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example22">Background Image</label>
+                                        <input type="text" id="form2Example22" class="form-control"
+                                            name="backgroundImage" formControlName="backgroundImage" value="{{this.game.backgroundImage}}" required />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example22">Rating</label>
+                                        <input type="text" id="form2Example22" class="form-control" name="rating"
+                                            formControlName="rating" required  value="{{this.game.rating}}"/>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example22">Description</label>
+                                        <textarea type="text" id="form2Example22" class="form-control"
+                                            name="descriptionRaw" formControlName="descriptionRaw" value="{{this.game.descriptionRaw}}" required ></textarea>   
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example22">Suggestion Count</label>
+                                        <input type="text" id="form2Example22" class="form-control"
+                                            name="suggestionCount" formControlName="suggestionCount" value="{{this.game.suggestionCount}}" required />
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example22">Review Count</label>
+                                        <input type="text" id="form2Example22" class="form-control" value="{{this.game.reviewCount}}" name="reviewCount"
+                                            formControlName="reviewCount" required />
+                                    </div>
+
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button type="submit" class="btn text-white mb-3"
+                                            style="background-color: #7c3989">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center bg-custom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

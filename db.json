@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "name": "Milica",
+      "surname": "Golubovic",
+      "email": "golubovicmilica07@gmail.com",
+      "username": "Kelara",
+      "password": "mika007@",
+      "favorites": [],
+      "id": 0
+    },
+    {
+      "name": "Andjela",
+      "surname": "Grujic",
+      "email": "adasdasda@saadasdas.com",
+      "username": "Andjely",
+      "password": "andjx123",
+      "favorites": [
+        25097
+      ],
+      "id": 1
+    },
+    {
+      "name": "Andjela",
+      "surname": "Vukotic",
+      "email": "vukotic.andjela97@gmail.com",
+      "username": "imahappyvirus",
+      "password": "andjela01",
+      "favorites": [],
+      "id": 2
+    },
+    {
+      "name": "Milica",
+      "surname": "Golubovic",
+      "email": "golubovicmilcy@gmail.com",
+      "username": "Milcyy",
+      "password": "prososamvalidejsn",
+      "favorites": [],
+      "id": 3
+    },
+    {
+      "name": "Milica",
+      "surname": "Golubovic",
+      "email": "asdkhaskjd@dasjldas.com",
+      "username": "jdlaskjdklas",
+      "password": "Mika007@",
+      "favorites": [],
+      "id": 4
+    },
+    {
+      "name": "Primer",
+      "surname": "Primercic",
+      "email": "primer@gmail.com",
+      "username": "primer123",
+      "password": "Primer123@",
+      "favorites": [],
+      "id": 5
+    }
+  ]
+}

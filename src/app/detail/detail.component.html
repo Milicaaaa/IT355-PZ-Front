@@ -1,0 +1,33 @@
+<div class="row gx-0">
+  <div class="col-sm-6">
+    <div class="row px-5">
+      <img class="responsive p-5" src="{{ game.backgroundImage }}" alt="Game image" />
+    </div>
+  </div>
+  <div class="col-sm-6 p-5">
+    <h2>
+      <strong>{{ game.gameName }}</strong>
+    </h2>
+    <h5>Genres: {{ getGenres(game.genres) }}</h5>
+    <h6 class="text-muted">Platforms: {{ getPlatforms(game.platforms) }}</h6>
+    <!-- <h6>Available on: {{ getStores(game.stores) }}</h6> -->
+    <hr> 
+    <p>{{ game.descriptionRaw }}</p>
+    <div class="d-flex">
+    <h3 class="text-muted">
+      Rating:
+      <button class="btn btn-success h1 btn-cstm">
+        {{ game.rating }}
+      </button>
+    </h3>
+    <div *ngIf="isLoggedIn();">
+     <button class="btn btn-light" *ngIf="!(isInFavorites)" (click)="addToFavorites()"><fa-icon  [icon]="icon" ></fa-icon></button>
+     <button class="btn btn-light" *ngIf="isInFavorites" (click)="removeFromFavorites()"><fa-icon  [icon]="iconFalse" ></fa-icon></button>
+     </div>
+    </div>
+    <h5>Tags:</h5>
+    <div class="d-inline align-items-stretch text-center px-1" *ngFor="let tag of game.tags">
+      <p class="btn btn-dark">{{ tag.tagName }}</p>
+    </div>
+  </div>
+</div>
